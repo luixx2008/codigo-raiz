@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Codigo - Raiz - Desarrollo de paginas de internet, Sitios Online, Paginas web, Software, Web Designer">
+    <meta name="keywords" content="Desarrollador en Monclova, Servicios de software, Sitios Web , Creacion Programas empresas, Programas para la industria, Software Coahuila">
+    <meta name="author" content="Codigo - Raiz">
+    <meta property="og:title" content="Codigo - Raiz - Servicio de Software">
+    <meta property="og:description" content="Profesional y de calidad servicio de Software en Monclova, Coahuila, Mexico">
+    <meta property="og:image" content="https://Codigo-Raiz.online/logo.png">
+    <meta property="og:url" content="https://Codigo-Raiz.online">
+    <!-- Cache headers meta tags -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    <meta http-equiv="Expires" content="Wed, 21 Oct 2026 07:28:00 GMT">
+    <title>Codigo Raiz | Desarrollo de Software Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo.png" alt="Logo Codigo Raiz" class="logo-icon">
+                    <div class="logo-text">Codigo <span>Raiz</span></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Transformamos Ideas en Soluciones Digitales</h1>
+            <p>Desarrollo de software a medida para pequeños y grandes negocios</p>
+            <div class="hero-btns">
+                <a href="#portafolio" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn btn-secondary">Contactar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Servicios</h2>
+                <p>Soluciones tecnológicas diseñadas para impulsar tu negocio</p>
+            </div>
+            <div class="services-grid">
+                <!--servicio 1-->
+                <div class="service-card" onclick="toggleServiceDetails(1)">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web profesionales, responsivos y optimizados para todos los dispositivos.</p>
+                </div>
+                <div class="service-details" id="service-details-1">
+                    <ul>
+                        <li>diseno web a medida</li>
+                        <li>resposive design</li>
+                        <li>optimizacion de SEO</li>
+                        <li>integracion con redes sociales</li>
+                    </ul>
+                </div>
+            </div>
+            
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce</h3>
+                    <p>Tiendas en línea completas con sistemas de pago seguros y gestión de inventario.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Sistemas de Gestión</h3>
+                    <p>Software personalizado para optimizar los procesos internos de tu empresa.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Consultoría Tecnológica</h3>
+                    <p>Asesoramiento especializado para implementar la mejor solución tecnológica.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Soluciones en la Nube</h3>
+                    <p>Implementación y migración de sistemas a entornos cloud para mayor escalabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section class="portfolio" id="portafolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portafolio</h2>
+                <p>Algunos de mis proyectos recientes</p>
+            </div>
+        <div class="portfolio-grid">
+            <a href="https://mxelectricsolutions.com/">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-image: url('mxelectricsolutions.png');"></div>
+                        <div class="portfolio-overlay">
+                                <h3>MX Electric Solutions</h3>
+                                <p>Sitio web corporativo para empresa de soluciones eléctricas</p>
+                     </div>
+               </div>
+            </a>
+            <a href="https://jochogoyo.netlify.app/">
+                <div class="portfolio-item">
+                     <div class="portfolio-img" style="background-image: url('jochogoyo.png');"></div>
+                            <div class="portfolio-overlay">
+                                <h3>Jocho Goyo</h3>
+                                <p>Plataforma web para servicios profesionales</p>
+                            </div>
+                     </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Mí</h2>
+                <p>Conoce al desarrollador detrás de Codigo Raiz</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Luis De La Garza</h3>
+                    <p>Soy un desarrollador de software independiente con sede en Castaños, Coahuila, México. Me especializo en crear soluciones tecnológicas personalizadas para negocios de todos los tamaños.</p>
+                    <p>Mi enfoque se centra en entender las necesidades específicas de cada cliente y traducirlas en software funcional, escalable y de alta calidad que impulse el crecimiento de sus operaciones.</p>
+                    <p>Con experiencia en diversos sectores, desde soluciones eléctricas hasta plataformas de servicios profesionales, me enorgullece ofrecer productos que realmente marcan la diferencia.</p>
+                    <a href="#contacto" class="btn btn-primary">Trabajemos Juntos</a>
+                </div>
+                <div class="about-image">
+                   <!-- <div class="about-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); height: 400px; background-size: cover; background-position: center;"></div>
+                    --><div class="experience-badge">
+                        <h4>9+</h4>
+                        <p>Años de Experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>Pongámonos en contacto para discutir tu próximo proyecto</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>866 195 2635</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>sr.vicious@outlook.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p>Castaños, Coahuila, México</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    <div id="paypal-button-container-P-6XV01885G7266931GNFTRWNI"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AS1MC9Bx35ZQaDtQstjLhWgDH2rGXLVItp6FxBfW1HM0zPFgJFPMiq5ddbcuz3sPXC8zlfrvbyyZynh5&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-6XV01885G7266931GNFTRWNI'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-6XV01885G7266931GNFTRWNI'); // Renders the PayPal button
+</script>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Codigo <span>Raiz</span></div>
+                    <p>Desarrollo de software personalizado para impulsar tu negocio hacia el éxito digital.</p>
+                   <!-- <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div> -->
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-phone"></i> 866 195 2635</p>
+                    <p><i class="fas fa-envelope"></i> sr.vicious@outlook.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Castaños, Coahuila, México</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Codigo Raiz. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
