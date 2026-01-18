@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Efectos Visuales | Codigo Raiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .effect-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .effect-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .effect-card:hover::before {
+            left: 100%;
+        }
+
+        .effect-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .effect-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .effect-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+
+        .icon-blue {
+            background: #dbeafe;
+            color: #3498db;
+        }
+
+        .icon-green {
+            background: #dcfce7;
+            color: #2ecc71;
+        }
+
+        .icon-purple {
+            background: #f3e8ff;
+            color: #9b59b6;
+        }
+
+        .icon-red {
+            background: #fee2e2;
+            color: #e74c3c;
+        }
+
+        .icon-cyan {
+            background: #cffafe;
+            color: #29baf6;
+        }
+
+        .icon-gold {
+            background: #fef3c7;
+            color: #f1c40f;
+        }
+
+        .effect-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            color: #333;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .code-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .code-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #4ec9b0;
+        }
+
+        .keyword {
+            color: #569cd6;
+        }
+
+        .string {
+            color: #ce9178;
+        }
+
+        .property {
+            color: #9cdcfe;
+        }
+
+        .value {
+            color: #b5cea8;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .back-link a:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .effects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .code-section {
+                padding: 20px;
+            }
+
+            pre {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-link">
+            <a href="index.html">← Volver al sitio</a>
+        </div>
+
+        <h1>🎨 Demo de Efectos Visuales</h1>
+        <p class="subtitle">Referencia rápida de todas las animaciones y efectos implementados</p>
+
+        <!-- Showcase Effects -->
+        <div class="effects-grid">
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-blue"><i class="fas fa-cube"></i></div>
+                    <span>Interfaces 3D</span>
+                </div>
+                <p class="effect-desc">Transformaciones 3D con perspectiva y parallax al mover el mouse</p>
+                <div class="code-block">
+                    <span class="keyword">transform:</span> <span class="string">perspective(1000px) rotateX(θ) rotateY(φ)</span>
+                </div>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-green"><i class="fas fa-waveform-lines"></i></div>
+                    <span>Ondas Animadas</span>
+                </div>
+                <p class="effect-desc">Animaciones fluidas con transiciones suaves y easing personalizado</p>
+                <div class="code-block">
+                    <span class="keyword">transition:</span> <span class="string">all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)</span>
+                </div>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-purple"><i class="fas fa-sparkles"></i></div>
+                    <span>Partículas</span>
+                </div>
+                <p class="effect-desc">Gradientes radiales dinámicos que simulan partículas luminosas</p>
+                <div class="code-block">
+                    <span class="keyword">background:</span> <span class="string">radial-gradient(...)</span>
+                </div>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-red"><i class="fas fa-bolt"></i></div>
+                    <span>Micro Interacciones</span>
+                </div>
+                <p class="effect-desc">Respuestas visuales inmediatas a acciones del usuario (hover, scroll)</p>
+                <div class="code-block">
+                    <span class="keyword">addEventListener</span>(<span class="string">'mousemove'</span>, ...)
+                </div>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-cyan"><i class="fas fa-palette"></i></div>
+                    <span>Gradientes</span>
+                </div>
+                <p class="effect-desc">Paletas de color dinámicas con filtros de backdrop blur</p>
+                <div class="code-block">
+                    <span class="keyword">backdrop-filter:</span> <span class="string">blur(10px)</span>
+                </div>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-gold"><i class="fas fa-infinity"></i></div>
+                    <span>Scroll Effects</span>
+                </div>
+                <p class="effect-desc">Animaciones sincronizadas con Intersection Observer API</p>
+                <div class="code-block">
+                    <span class="keyword">new</span> <span class="highlight">IntersectionObserver</span>(...)
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">✨ Código Técnico ✨</div>
+
+        <!-- CSS Code Section -->
+        <div class="code-section">
+            <h2>CSS: Animaciones Principales</h2>
+            <pre><span class="keyword">@keyframes</span> <span class="highlight">fadeInUp</span> {
+    <span class="keyword">from</span> {
+        <span class="property">opacity:</span> <span class="value">0</span>;
+        <span class="property">transform:</span> <span class="string">translateY(30px)</span>;
+    }
+    <span class="keyword">to</span> {
+        <span class="property">opacity:</span> <span class="value">1</span>;
+        <span class="property">transform:</span> <span class="string">translateY(0)</span>;
+    }
+}
+
+.<span class="highlight">showcase-card</span>:hover {
+    <span class="property">transform:</span> <span class="string">translateY(-8px) scale(1.02)</span>;
+    <span class="property">box-shadow:</span> <span class="string">0 20px 50px rgba(0,0,0,0.3)</span>;
+}</pre>
+        </div>
+
+        <!-- JavaScript Code Section -->
+        <div class="code-section">
+            <h2>JavaScript: Mouse Tracking 3D</h2>
+            <pre><span class="keyword">const</span> <span class="highlight">rect</span> = card.getBoundingClientRect();
+<span class="keyword">const</span> <span class="property">rotateX</span> = (y - centerY) / <span class="value">10</span>;
+<span class="keyword">const</span> <span class="property">rotateY</span> = (centerX - x) / <span class="value">10</span>;
+
+card.style.transform = <span class="string">`perspective(1000px) 
+    rotateX($</span>{rotateX}<span class="string">deg) 
+    rotateY($</span>{rotateY}<span class="string">deg) 
+    translateZ(10px)`</span>;</pre>
+        </div>
+
+        <!-- Intersection Observer Section -->
+        <div class="code-section">
+            <h2>JavaScript: Intersection Observer para Entrada</h2>
+            <pre><span class="keyword">const</span> <span class="highlight">observer</span> = <span class="keyword">new</span> <span class="highlight">IntersectionObserver</span>((entries) => {
+    entries.forEach(entry => {
+        <span class="keyword">if</span> (entry.isIntersecting) {
+            entry.target.style.<span class="property">opacity</span> = <span class="string">'1'</span>;
+            entry.target.style.<span class="property">transform</span> = <span class="string">'translateY(0)'</span>;
+        }
+    });
+}, { <span class="property">threshold:</span> <span class="value">0.1</span> });</pre>
+        </div>
+
+        <!-- Logo Animation Section -->
+        <div class="code-section">
+            <h2>SVG: Logo Animado</h2>
+            <pre><span class="keyword">&lt;svg</span> <span class="property">class</span>=<span class="string">"logo-icon"</span>&gt;
+    <span class="keyword">&lt;polyline</span>
+        <span class="property">points</span>=<span class="string">"30,5 29,12 31,16 28,22 30,28..."</span>
+        <span class="property">stroke</span>=<span class="string">"url(#rootGradient)"</span>
+        <span class="property">class</span>=<span class="string">"root-line-main"</span>
+    /&gt;
+<span class="keyword">&lt;/svg&gt;</span>
+
+<span class="keyword">@keyframes</span> <span class="highlight">drawLine</span> {
+    <span class="keyword">0%</span>, <span class="keyword">100%</span> { <span class="property">stroke-dashoffset:</span> <span class="value">100</span>; }
+    <span class="keyword">50%</span> { <span class="property">stroke-dashoffset:</span> <span class="value">0</span>; }
+}</pre>
+        </div>
+
+        <div class="section-divider">🚀 Características Técnicas 🚀</div>
+
+        <!-- Features -->
+        <div class="effects-grid">
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-blue"><i class="fas fa-tachometer-alt"></i></div>
+                    <span>Performance</span>
+                </div>
+                <p class="effect-desc">✓ Optimizado a 60 FPS<br>✓ GPU acceleration<br>✓ Lazy animations</p>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-green"><i class="fas fa-globe"></i></div>
+                    <span>Cross-Browser</span>
+                </div>
+                <p class="effect-desc">✓ Chrome/Edge 90+<br>✓ Firefox 88+<br>✓ Safari 14+</p>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-purple"><i class="fas fa-mobile-alt"></i></div>
+                    <span>Responsive</span>
+                </div>
+                <p class="effect-desc">✓ Mobile-first<br>✓ Adaptive layouts<br>✓ Touch-friendly</p>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-red"><i class="fas fa-code"></i></div>
+                    <span>Pure Web APIs</span>
+                </div>
+                <p class="effect-desc">✓ HTML5/CSS3<br>✓ Vanilla JavaScript<br>✓ SVG Graphics</p>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-cyan"><i class="fas fa-lock"></i></div>
+                    <span>Accesibilidad</span>
+                </div>
+                <p class="effect-desc">✓ WCAG 2.1<br>✓ Reduced motion<br>✓ Semantic HTML</p>
+            </div>
+
+            <div class="effect-card">
+                <div class="effect-title">
+                    <div class="effect-icon icon-gold"><i class="fas fa-star"></i></div>
+                    <span>Polished</span>
+                </div>
+                <p class="effect-desc">✓ Smooth transitions<br>✓ Visual feedback<br>✓ Professional UX</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Código Raiz © 2025 - Desarrollo de Software Profesional</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Toda la documentación está en MEJORAS.md</p>
+        </div>
+    </div>
+</body>
+</html>
