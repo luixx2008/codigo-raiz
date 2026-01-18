@@ -23,14 +23,27 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="logo.png" alt="Logo Codigo Raiz" class="logo-icon">
+                    <svg class="logo-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="rootGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glow"><feGaussianBlur stdDeviation="0.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                        </defs>
+                        <polyline points="30,5 29,12 31,16 28,22 30,28 27,35 29,40 31,46 28,52 30,55" fill="none" stroke="url(#rootGradient)" stroke-width="3" stroke-linecap="round" filter="url(#glow)" class="root-line-main"/>
+                        <polyline points="29,12 18,14 15,18" fill="none" stroke="url(#rootGradient)" stroke-width="2" stroke-linecap="round" filter="url(#glow)" class="root-line-left"/>
+                        <polyline points="28,22 16,26 12,30" fill="none" stroke="url(#rootGradient)" stroke-width="2" stroke-linecap="round" filter="url(#glow)" class="root-line-left"/>
+                        <polyline points="31,16 44,18 48,24" fill="none" stroke="url(#rootGradient)" stroke-width="2" stroke-linecap="round" filter="url(#glow)" class="root-line-right"/>
+                        <polyline points="30,28 42,32 46,38" fill="none" stroke="url(#rootGradient)" stroke-width="2" stroke-linecap="round" filter="url(#glow)" class="root-line-right"/>
+                    </svg>
                     <div class="logo-text">Codigo <span>Raiz</span></div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#showcase">Galería</a></li>
                     <li><a href="#portafolio">Portafolio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -42,6 +55,18 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
+        <div class="bird-container bird-container--one">
+            <div class="bird bird--one"></div>
+        </div>
+        <div class="bird-container bird-container--two">
+            <div class="bird bird--two"></div>
+        </div>
+        <div class="bird-container bird-container--three">
+            <div class="bird bird--three"></div>
+        </div>
+        <div class="bird-container bird-container--four">
+            <div class="bird bird--four"></div>
+        </div>
         <div class="hero-content">
             <h1>Transformamos Ideas en Soluciones Digitales</h1>
             <p>Desarrollo de software a medida para pequeños y grandes negocios</p>
@@ -137,6 +162,78 @@
                      </div>
                 </div>
             </a>
+        </div>
+    </section>
+
+    <!-- Showcase Visual Effects -->
+    <section class="showcase" id="showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galería de Capacidades</h2>
+                <p>Efectos visuales y animaciones que pueden llevar tu proyecto al siguiente nivel</p>
+            </div>
+            
+            <div class="showcase-grid">
+                <!-- Card 1: Blue Glow -->
+                <div class="showcase-card card-blue">
+                    <div class="card-inner">
+                        <div class="card-icon icon-blue"><i class="fas fa-cube"></i></div>
+                        <h3>Interfaces 3D</h3>
+                        <p>Efectos de profundidad y transformaciones 3D</p>
+                    </div>
+                    <div class="card-bg-effect effect-blue"></div>
+                </div>
+                
+                <!-- Card 2: Green Glow -->
+                <div class="showcase-card card-green">
+                    <div class="card-inner">
+                        <div class="card-icon icon-green"><i class="fas fa-waveform-lines"></i></div>
+                        <h3>Ondas Animadas</h3>
+                        <p>Animaciones fluidas y patrones de movimiento</p>
+                    </div>
+                    <div class="card-bg-effect effect-green"></div>
+                </div>
+                
+                <!-- Card 3: Purple Glow -->
+                <div class="showcase-card card-purple">
+                    <div class="card-inner">
+                        <div class="card-icon icon-purple"><i class="fas fa-sparkles"></i></div>
+                        <h3>Partículas</h3>
+                        <p>Sistemas de partículas dinámicas y ópales</p>
+                    </div>
+                    <div class="card-bg-effect effect-purple"></div>
+                </div>
+                
+                <!-- Card 4: Red Glow -->
+                <div class="showcase-card card-red">
+                    <div class="card-inner">
+                        <div class="card-icon icon-red"><i class="fas fa-bolt"></i></div>
+                        <h3>Micro Interacciones</h3>
+                        <p>Respuestas visuales rápidas y satisfactorias</p>
+                    </div>
+                    <div class="card-bg-effect effect-red"></div>
+                </div>
+                
+                <!-- Card 5: Cyan Glow -->
+                <div class="showcase-card card-cyan">
+                    <div class="card-inner">
+                        <div class="card-icon icon-cyan"><i class="fas fa-palette"></i></div>
+                        <h3>Gradientes</h3>
+                        <p>Paletas de color dinámicas y degradados sofisticados</p>
+                    </div>
+                    <div class="card-bg-effect effect-cyan"></div>
+                </div>
+                
+                <!-- Card 6: Gold Glow -->
+                <div class="showcase-card card-gold">
+                    <div class="card-inner">
+                        <div class="card-icon icon-gold"><i class="fas fa-infinity"></i></div>
+                        <h3>Scroll Effects</h3>
+                        <p>Efectos sincronizados con el desplazamiento</p>
+                    </div>
+                    <div class="card-bg-effect effect-gold"></div>
+                </div>
+            </div>
         </div>
     </section>
 
