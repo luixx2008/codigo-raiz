@@ -75,6 +75,18 @@
         .logo {
             display: flex;
             align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
         }
         
         .logo-icon {
