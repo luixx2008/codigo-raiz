@@ -1,3 +1,13 @@
+// Pantalla de carga
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        if(loadingScreen) {
+            loadingScreen.style.display = 'none';
+        }
+    }, 2000);
+});
+
 function toggleServiceDetails(serviceID) {
             const details = document.getElementById('service-details-${serviceID}');
             const allDetails = document.querySelectorAll('service-details');

@@ -30,23 +30,64 @@
             position: relative;
         }
 
-        /* Fantasma decorativo - elemento de fondo */
-        .ghost-decorative {
+        /* Pantalla de Carga */
+        .loading-screen {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 100px;
-            height: 105px;
-            opacity: 0.25;
-            z-index: 999;
-            animation: float 4s ease-in-out infinite;
-            pointer-events: none;
-            filter: drop-shadow(0 4px 8px rgba(52, 152, 219, 0.3));
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOutLoading 0.8s ease-out 2s forwards;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .ghost-loading {
+            width: 150px;
+            height: 160px;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+        }
+
+        .loading-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeOutLoading {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(-5deg); }
-            50% { transform: translateY(-25px) rotate(5deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
         
         /* Header y navegación */
